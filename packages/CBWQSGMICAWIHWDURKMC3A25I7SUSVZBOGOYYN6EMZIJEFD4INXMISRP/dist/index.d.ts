@@ -1,7 +1,7 @@
 import { Buffer } from "buffer";
 import { AssembledTransaction, Client as ContractClient, ClientOptions as ContractClientOptions, MethodOptions } from '@stellar/stellar-sdk/contract';
 import type { i128 } from '@stellar/stellar-sdk/contract';
-export * from '@stellar/stellar-sdk';
+export { Account, Asset, BASE_FEE, Contract, Keypair, Memo, Networks, Operation, Transaction, TransactionBuilder, xdr } from '@stellar/stellar-sdk';
 export * as contract from '@stellar/stellar-sdk/contract';
 export * as rpc from '@stellar/stellar-sdk/rpc';
 export declare const networks: {
@@ -129,12 +129,6 @@ export interface Client {
     }) => Promise<AssembledTransaction<null>>;
 }
 export declare class Client extends ContractClient {
-    get_total_raised() {
-      throw new Error("Method not implemented.");
-    }
-    donate(arg0: { donor: string; amount: bigint; }): any {
-      throw new Error("Method not implemented.");
-    }
     readonly options: ContractClientOptions;
     static deploy<T = Client>(
     /** Options for initializing a Client as well as for calling a method, with extras specific to deploying. */
